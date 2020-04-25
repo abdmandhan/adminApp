@@ -231,7 +231,7 @@ return [
             'submenu'   => [
                 [
                     'text' => 'Penilaian Dosen Berdasarkan Key Performance Indicator',
-                    'url'  => '#',
+                    'url'  => 'kpi',
                     'icon' => 'fas fa-fw fa-user',
                 ],
             ],
@@ -240,13 +240,12 @@ return [
         [
             'text' => 'Data Master',
             'icon' => 'fas fa-fw fa-user',
-            'submenu'   => [
-                [
-                    'text' => 'Data Dosen',
-                    'url'  => '#',
-                    'icon' => 'fas fa-fw fa-user',
-                ],
-            ],
+            'url' => '#'
+        ],
+        [
+            'text' => 'Data Dosen',
+            'icon' => 'fas fa-fw fa-user',
+            'url' => 'dosen'
         ],
 
         [
@@ -255,27 +254,12 @@ return [
             'submenu'   => [
                 [
                     'text' => 'Bobot',
-                    'url'  => '#',
+                    'url'  => 'bobotsaw',
                     'icon' => 'fas fa-fw fa-user',
                 ],
                 [
                     'text' => 'Perankingan',
-                    'url'  => '#',
-                    'icon' => 'fas fa-fw fa-user',
-                ],
-                [
-                    'text' => 'Data Kuisioner Atasan',
-                    'url'  => '#',
-                    'icon' => 'fas fa-fw fa-user',
-                ],
-                [
-                    'text' => 'Data Kuisioner Mahasiswa',
-                    'url'  => '#',
-                    'icon' => 'fas fa-fw fa-user',
-                ],
-                [
-                    'text' => 'Data Kuisioner Dosen',
-                    'url'  => '#',
+                    'url'  => 'perangkingansaw',
                     'icon' => 'fas fa-fw fa-user',
                 ],
             ],
@@ -286,12 +270,12 @@ return [
             'submenu'   => [
                 [
                     'text' => 'Bobot',
-                    'url'  => '#',
+                    'url'  => 'bobotahp',
                     'icon' => 'fas fa-fw fa-user',
                 ],
                 [
                     'text' => 'Perankingan',
-                    'url'  => '#',
+                    'url'  => 'perankinganahp',
                     'icon' => 'fas fa-fw fa-user',
                 ],
 
@@ -336,21 +320,21 @@ return [
     'plugins' => [
         [
             'name' => 'Datatables',
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
                 ],
                 [
                     'type' => 'js',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
                 ],
                 [
                     'type' => 'css',
-                    'asset' => false,
+                    'asset' => true,
                     'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
                 ],
             ],

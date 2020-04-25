@@ -33,4 +33,11 @@ Route::group([
     ], function () {
         Route::resource('user', 'UserController');
     });
+
+    Route::resource('kpi', 'KpiController');
+    Route::resource('dosen', 'DosenController');
+    Route::resource('bobotsaw', 'BobotSawController');
+    Route::resource('perangkingansaw', 'PerangkinganSawController');
+    Route::resource('bobotahp', 'BobotAhpController');
+    Route::resource('perankinganahp', 'PerankinganAhpController');
 });

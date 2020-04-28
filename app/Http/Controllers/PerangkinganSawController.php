@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PerangkinganSawStore;
 use App\PerangkinganSaw;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class PerangkinganSawController extends Controller
      */
     public function create()
     {
-        //
+        return view('perangkingansaw.create');
     }
 
     /**
@@ -34,9 +35,12 @@ class PerangkinganSawController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PerangkinganSawStore $request)
     {
-        //
+        $data = $request->except('_token');
+        PerangkinganSaw::create($data);
+
+        return redirect(route('perangkingansaw.index'))->with('success', 'success create data');
     }
 
     /**
@@ -47,7 +51,6 @@ class PerangkinganSawController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -58,7 +61,8 @@ class PerangkinganSawController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = PerangkinganSaw::find($id);
+        return view('perangkingansaw.edit', compact('data'));
     }
 
     /**
@@ -70,7 +74,10 @@ class PerangkinganSawController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except(['_token', '_method']);
+        PerangkinganSaw::where('id', $id)->update($data);
+
+        return redirect()->back()->with('success', 'success update data');
     }
 
     /**
@@ -81,6 +88,9 @@ class PerangkinganSawController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = PerangkinganSaw::find($id);
+        $data->delete();
+
+        return redirect(route('perangkingansaw.index'))->with('success', 'success delete data');
     }
 }

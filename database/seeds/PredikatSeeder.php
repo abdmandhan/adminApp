@@ -21,7 +21,7 @@ class PredikatSeeder extends Seeder
                     'name'      => 'Tidak Baik'
                 ],
                 [
-                    'name'      => 'Cuup Baik'
+                    'name'      => 'Cukup Baik'
                 ],
                 [
                     'name'      => 'Baik'

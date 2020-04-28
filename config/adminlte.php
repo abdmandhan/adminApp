@@ -223,11 +223,6 @@ return [
                     'url'  => 'user/user',
                     'icon' => 'fas fa-fw fa-user',
                 ],
-                // [
-                //     'text' => 'Data Diri',
-                //     'url'  => 'user/user',
-                //     'icon' => 'fas fa-fw fa-user',
-                // ],
             ],
         ],
         // [

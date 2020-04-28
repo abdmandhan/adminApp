@@ -2,13 +2,12 @@
     <div class="card-header">
         <h3 class="card-title">{{ $title }}</h3>
         <div class="card-tools">
-            <span class="badge badge-primary">Label</span>
+            @if ($buttonUrl)
+            <a href="{{ route($buttonUrl) }}" class="btn btn-primary">{{ $buttonText }}</a>
+            @endif
         </div>
     </div>
     <div class="card-body">
         {{ $slot }}
-    </div>
-    <div class="card-footer">
-        The footer of the card
     </div>
 </div>

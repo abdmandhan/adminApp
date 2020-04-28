@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PerankinganAhpStore;
 use App\PerankinganAhp;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class PerankinganAhpController extends Controller
      */
     public function create()
     {
-        //
+        return view('perankinganahp.create');
     }
 
     /**
@@ -34,9 +35,12 @@ class PerankinganAhpController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PerankinganAhpStore $request)
     {
-        //
+        $data = $request->except('_token');
+        PerankinganAhp::create($data);
+
+        return redirect(route('perankinganahp.index'))->with('success', 'success create data');
     }
 
     /**
@@ -58,7 +62,8 @@ class PerankinganAhpController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = PerankinganAhp::find($id);
+        return view('perankinganahp.edit', compact('data'));
     }
 
     /**
@@ -70,7 +75,10 @@ class PerankinganAhpController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except(['_method', '_token']);
+        PerankinganAhp::find($id)->update($data);
+
+        return redirect()->back()->with('success', 'success edit data');
     }
 
     /**
@@ -81,6 +89,9 @@ class PerankinganAhpController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = PerankinganAhp::find($id);
+        $data->delete();
+
+        return redirect(route('perankinganahp.index'))->with('success', 'success delete data');
     }
 }

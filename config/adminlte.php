@@ -219,23 +219,28 @@ return [
             'icon'      => 'fas fa-fw fa-user',
             'submenu'   => [
                 [
-                    'text' => 'Data Diri',
+                    'text' => 'List Data Pengguna',
                     'url'  => 'user/user',
                     'icon' => 'fas fa-fw fa-user',
                 ],
+                // [
+                //     'text' => 'Data Diri',
+                //     'url'  => 'user/user',
+                //     'icon' => 'fas fa-fw fa-user',
+                // ],
             ],
         ],
-        [
-            'text' => 'Administrasi',
-            'icon' => 'fas fa-fw fa-user',
-            'submenu'   => [
-                [
-                    'text' => 'Penilaian Dosen Berdasarkan Key Performance Indicator',
-                    'url'  => 'kpi',
-                    'icon' => 'fas fa-fw fa-user',
-                ],
-            ],
-        ],
+        // [
+        //     'text' => 'Administrasi',
+        //     'icon' => 'fas fa-fw fa-user',
+        //     'submenu'   => [
+        //         [
+        //             'text' => 'Penilaian Dosen Berdasarkan Key Performance Indicator',
+        //             'url'  => 'kpi',
+        //             'icon' => 'fas fa-fw fa-user',
+        //         ],
+        //     ],
+        // ],
 
         [
             'text' => 'Data Master',

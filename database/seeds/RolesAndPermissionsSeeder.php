@@ -21,6 +21,10 @@ class RolesAndPermissionsSeeder extends Seeder
         //     ->givePermissionTo(['dosen']);
 
         $role = Role::create(['name' => 'admin']);
+        $role = Role::create(['name' => 'dosen']);
+        $role = Role::create(['name' => 'mahasiswa']);
+        $role = Role::create(['name' => 'atasan']);
+        $role = Role::create(['name' => 'teman_sejawat']);
         $role->givePermissionTo(Permission::all());
     }
 }
